@@ -1,0 +1,22 @@
+:root {
+  --baby-blue: #d4f1f4;
+  --blue-green: #75e6da;
+  --blue-grotto: #189ab4;
+  --navy-blue: #05445e;
+  --pewter: #c7c8cb;
+  --white: #f1f3f3;
+  --gunmetal: #e0e5e7;
+  --terra-cotta: #ca6641;
+  --rose-red: #c85250;
+}
+
+$main-color: (
+  'baby-blue': var(--baby-blue),
+  'blue-green': var(--blue-green),
+  'blue-grotto': var(--blue-grotto),
+  'navy-blue': var(--navy-blue),
+  'pewter': var(--pewter),
+  'brose-red': var(--rose-red),
+  'terra-cotta': var(--terra-cotta),
+  'gunmetal': var(--gunmetal),
+);
