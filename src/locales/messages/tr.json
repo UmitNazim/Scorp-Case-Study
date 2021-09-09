@@ -1,4 +1,12 @@
 {
     "general": {
-        "name": "Adı"
-    }}
+        "aboutUs": "Hakkımızda",
+        "carrier": "Kariyer",
+        "contact": "Kontact",
+        "mainPage": "Ana Sayfa"
+    },
+    "languages": {
+        "english": "İngilizce",
+        "turkish": "Türkçe"
+    }
+}

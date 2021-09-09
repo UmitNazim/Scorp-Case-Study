@@ -1,5 +1,12 @@
 {
     "general": {
-        "name": "Name"
+        "aboutUs": "About Us",
+        "carrier": "Carrier",
+        "contact": "Contact",
+        "mainPage": "Main Page"
+    },
+    "languages": {
+        "english": "English",
+        "turkish": "Turkish"
     }
 }

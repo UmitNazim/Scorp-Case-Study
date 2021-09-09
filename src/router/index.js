@@ -1,4 +1,3 @@
-
 // import * as VueRouter from 'vue-router';
 // import Deneme from '@/views/deneme.vue'
 // import DenemeSecond from '@/views/deneme2.vue'
@@ -20,21 +19,30 @@
 //   routes,
 // });
 
-
-import { createWebHistory, createRouter } from "vue-router";
-import Deneme from '@/views/deneme.vue'
-import DenemeSecond from '@/views/deneme2.vue'
+import { createWebHistory, createRouter } from 'vue-router';
+import Deneme from '@/views/deneme.vue';
+import DenemeSecond from '@/views/deneme2.vue';
 
 const routes = [
   {
     name: 'deneme',
     path: '/deneme',
-    component: Deneme
+    component: Deneme,
+    meta: {
+      pageTitle: 'User',
+      requiresLogin: false,
+      permissions: null,
+    },
   },
   {
     name: 'deneme-second',
     path: '/deneme-second',
     component: DenemeSecond,
+    meta: {
+      pageTitle: 'Login',
+      requiresLogin: false,
+      permissions: null,
+    },
   },
 ];
 

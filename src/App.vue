@@ -1,16 +1,14 @@
 <template>
-  <div>
-    <h1>This is main Part</h1>
+  <app-layout>
+    <!-- <transition name="fade-in-down-out" mode="in-out"> -->
     <router-view></router-view>
-
-    <router-link :to="{name:'deneme'}">Deneme</router-link> |
-    <router-link :to="{name:'deneme-second'}">Deneme-Second</router-link> 
-
-    <button>{{$t('general.name')}}</button>
-  </div>
+    <!-- </transition> -->
+  </app-layout>
 </template>
 <script>
+import AppLayout from './layout';
 export default {
   name: 'ScorpStoreFront',
+  components: { AppLayout },
 };
 </script>
