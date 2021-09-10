@@ -1,9 +1,14 @@
 <template>
-  <div>App Vue dfrherherh</div>
+  <app-layout>
+    <router-view></router-view>
+  </app-layout>
 </template>
 
 <script>
-export default {}
+import AppLayout from './layout';
+
+export default {
+  name: 'App',
+  components: { AppLayout },
+};
 </script>
-
-

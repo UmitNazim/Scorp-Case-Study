@@ -1,0 +1,18 @@
+.app-footer {
+  height: auto;
+  flex-shrink: 0;
+  background-color: var(--seas-hell);
+  padding: 12px 0;
+  width: 100%;
+
+  &__item {
+    font-size: 14px;
+    font-weight: 500;
+    color: (--rose-red);
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

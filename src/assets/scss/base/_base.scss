@@ -1,0 +1,13 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body,
+#app {
+    min-height: 100vh;
+}
