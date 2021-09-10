@@ -1,0 +1,10 @@
+.contact-us {
+  width: 100%;
+  height: auto;
+  padding: 25px;
+
+  @media (min-width: 767px) {
+    width: 40%;
+    margin-top: 20px;
+  }
+}

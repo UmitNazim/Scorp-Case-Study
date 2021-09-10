@@ -1,10 +1,10 @@
-@keyframes spinner {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.fade-in-down-out-enter-active {
+  animation: coming 0.25s;
+  opacity: 0;
+}
+
+.fade-in-down-out-leave-active {
+  animation: going 0.25s;
 }
 
 @keyframes going {
@@ -28,12 +28,4 @@
     transform: translateY(0);
     opacity: 1;
   }
-}
-.fade-in-down-out-enter-active {
-  animation: coming 0.25s;
-  opacity: 0;
-}
-
-.fade-in-down-out-leave-active {
-  animation: going 0.25s;
 }

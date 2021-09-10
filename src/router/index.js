@@ -1,45 +1,22 @@
-// import * as VueRouter from 'vue-router';
-// import Deneme from '@/views/deneme.vue'
-// import DenemeSecond from '@/views/deneme2.vue'
-
-// const routes = [
-//   {
-//     name: 'deneme',
-//     path: '/deneme',
-//     component: Deneme
-//   },
-//   {
-//     name: 'deneme-second',
-//     path: '/deneme-second',
-//     component: DenemeSecond,
-//   },
-// ];
-// export default VueRouter.createRouter({
-//   history: VueRouter.createWebHistory(),
-//   routes,
-// });
-
 import { createWebHistory, createRouter } from 'vue-router';
-import Deneme from '@/views/deneme.vue';
-import DenemeSecond from '@/views/deneme2.vue';
 
 const routes = [
   {
-    name: 'deneme',
-    path: '/deneme',
-    component: Deneme,
+    path: '/',
+    name: 'Homepage',
+    component: () => import('@/views/HomePage/'),
     meta: {
-      pageTitle: 'User',
+      pageTitle: 'page.homePage',
       requiresLogin: false,
       permissions: null,
     },
   },
   {
-    name: 'deneme-second',
-    path: '/deneme-second',
-    component: DenemeSecond,
+    path: '/contact-us',
+    name: 'ContactUS',
+    component: () => import('@/views/ContactUs'),
     meta: {
-      pageTitle: 'Login',
+      pageTitle: 'page.contactUs',
       requiresLogin: false,
       permissions: null,
     },

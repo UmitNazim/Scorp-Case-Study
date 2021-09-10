@@ -5,6 +5,7 @@
     <app-footer></app-footer>
   </div>
 </template>
+
 <script>
 import AppHeader from './AppHeader';
 import AppBody from './AppBody';

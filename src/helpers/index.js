@@ -5,6 +5,7 @@ const isMobile = /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Acc
 );
 
 const helpers = {
+  //TODO: JsDoc is Missing
   isMobile: () => Boolean(isMobile && !isTablet),
   isTablet: () => isTablet,
 };

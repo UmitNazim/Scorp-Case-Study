@@ -7,10 +7,6 @@ const formControlMixin = {
       type: String,
       default: null,
     },
-    label: {
-      type: String,
-      default: null,
-    },
     validate: {
       type: [String, Object],
     },
@@ -44,17 +40,8 @@ const formControlMixin = {
         class: this.classes,
         disabled: this.disabled,
         rules: this.validate,
-        label: this.label,
       };
     },
-    // value: {
-    //   get() {
-    //     return this.modelValue;
-    //   },
-    //   set(val) {
-    //     this.$emit('update:modalValue', val);
-    //   },
-    // },
   },
 };
 

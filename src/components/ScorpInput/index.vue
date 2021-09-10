@@ -1,6 +1,6 @@
 <template>
-  <label v-if="label" class="scorp-label d-block mb-1 mt-2" :for="name">
-    {{ label }} <span v-if="isRequired" class="scorp-label__error">*</span></label
+  <label class="scorp-label d-block mb-1 mt-2" :for="name">
+    {{ name }} <span v-if="isRequired" class="scorp-label__error">*</span></label
   >
   <validate-form-field v-bind="options" class="scorp-input" v-model="value" />
   <validate-form-error-message :name="name" class="scorp-label__error" />
@@ -22,6 +22,12 @@ export default {
     });
     return { value };
   },
+  props: {
+    type: {
+      type: String,
+      validator: val => ['text', 'textarea', 'password'].includes(val),
+    },
+  },
   components: {
     'validate-form-field': Field,
     'validate-form-error-message': ErrorMessage,
@@ -32,7 +38,8 @@ export default {
       return {
         ...this.formControlOptions,
         class: { 'scorp-input__disabled': this.disabled },
-        type: 'text',
+        ...(this.type && this.type === 'textarea' ? { as: this.type } : { type: this.type }),
+        ...this.$attrs,
       };
     },
   },
