@@ -8,7 +8,7 @@
           v-for="({ value, ...rest }, index) in fields"
           :key="`contact-us-field-${index}`"
         >
-          <scorp-input :name="$t(`contactUs.${value}`)" v-bind="rest" v-model="user[value]" />
+          <scorp-input :name="$t(`contactUs.${value}`)" v-bind="rest" v-model="message[value]" />
         </div>
       </div>
       <scorp-button flat block class="my-4" type="submit">{{ $t('action.send') }}</scorp-button>
@@ -21,12 +21,17 @@ export default {
   name: 'ContactUs',
   data() {
     return {
-      user: {},
+      message: {},
     };
   },
   methods: {
     handleSubmit({ isValid: { valid } } = {}) {
-      valid && this.$router.push('/');
+      if (valid) {
+        this.$store.commit('contactUs/setCotactUsMessage', {
+          message: this.message,
+        });
+        this.$router.push('/');
+      }
     },
   },
   computed: {

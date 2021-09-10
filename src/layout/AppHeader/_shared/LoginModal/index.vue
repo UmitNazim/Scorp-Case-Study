@@ -31,12 +31,7 @@ export default {
   name: 'LoginModal',
   data() {
     return {
-      user: {
-        title: null,
-        name: null,
-        email: null,
-        password: null,
-      },
+      user: {},
     };
   },
   methods: {
