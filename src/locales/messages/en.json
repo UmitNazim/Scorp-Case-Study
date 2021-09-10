@@ -1,10 +1,10 @@
 {
     "action": {
         "cancel": "Cancel",
-        "save": "Save",
-        "send": "Send",
+        "logOut": "Log Out",
         "login": "Login",
-        "logOut":"Log Out"
+        "save": "Save",
+        "send": "Send"
     },
     "contactUs": {
         "country": "Country",

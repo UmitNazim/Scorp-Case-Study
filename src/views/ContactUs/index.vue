@@ -5,7 +5,7 @@
       <div class="row">
         <div
           class="col-md-12 col-sm-12"
-          v-for="({ value, ...rest }, index) in items"
+          v-for="({ value, ...rest }, index) in fields"
           :key="`contact-us-field-${index}`"
         >
           <scorp-input :name="$t(`contactUs.${value}`)" v-bind="rest" v-model="user[value]" />
@@ -30,7 +30,7 @@ export default {
     },
   },
   computed: {
-    items() {
+    fields() {
       return [
         { validate: 'required', value: 'title' },
         { validate: 'required', value: 'name' },

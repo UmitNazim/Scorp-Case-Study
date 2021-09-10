@@ -1,10 +1,10 @@
 {
     "action": {
         "cancel": "İptal",
-        "save": "Kaydet",
-        "send": "Gönder",
+        "logOut": "Çıkış",
         "login": "Giriş",
-        "logOut": "Çıkış"
+        "save": "Kaydet",
+        "send": "Gönder"
     },
     "contactUs": {
         "country": "Ülke",

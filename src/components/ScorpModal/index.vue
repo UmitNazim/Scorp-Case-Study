@@ -1,4 +1,5 @@
 <template>
+  <!-- teleport tag opens modal in body layer -->
   <teleport to="body">
     <transition name="fade-in-down-out" mode="in-out">
       <div

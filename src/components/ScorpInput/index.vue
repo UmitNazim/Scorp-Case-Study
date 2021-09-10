@@ -1,6 +1,6 @@
 <template>
   <label class="scorp-label d-block mb-1 mt-2" :for="name">
-    {{ name }} <span v-if="isRequired" class="scorp-label__error">*</span></label
+    {{ name }}<span v-if="isRequired" class="scorp-label__error">*</span></label
   >
   <validate-form-field v-bind="options" class="scorp-input" v-model="value" />
   <validate-form-error-message :name="name" class="scorp-label__error" />
@@ -13,14 +13,11 @@ import { computed } from 'vue';
 
 export default {
   name: 'ScorpInput',
-  mixins: [FormControlMixin],
   emits: ['update:modelValue'],
-  setup(props, { emit }) {
-    const value = computed({
-      get: () => props.modelValue,
-      set: value => emit('update:modelValue', value),
-    });
-    return { value };
+  mixins: [FormControlMixin],
+  components: {
+    'validate-form-field': Field,
+    'validate-form-error-message': ErrorMessage,
   },
   props: {
     type: {
@@ -28,11 +25,13 @@ export default {
       validator: val => ['text', 'textarea', 'password'].includes(val),
     },
   },
-  components: {
-    'validate-form-field': Field,
-    'validate-form-error-message': ErrorMessage,
+  setup(props, { emit }) {
+    const value = computed({
+      get: () => props.modelValue,
+      set: value => emit('update:modelValue', value),
+    });
+    return { value };
   },
-
   computed: {
     options() {
       return {

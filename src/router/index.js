@@ -13,7 +13,7 @@ const routes = [
   },
   {
     path: '/contact-us',
-    name: 'ContactUS',
+    name: 'ContactUs',
     component: () => import('@/views/ContactUs'),
     meta: {
       pageTitle: 'page.contactUs',

@@ -2,32 +2,25 @@
   <scorp-modal size="md" @on-close="onClose" close-on-out-side-click full-screen-on-mobile>
     <scorp-form @on-submit="handleSubmit">
       <div class="row">
-        <div class="col-md-12 col-sm-12">
-          <scorp-input validate="required" :name="$t('contactUs.title')" v-model="user.title" />
-        </div>
-        <div class="col-md-12 col-sm-12">
-          <scorp-input validate="required" :name="$t('contactUs.name')" v-model="user.name" />
-        </div>
-        <div class="col-md-12 col-sm-12">
-          <scorp-input validate="required|email" :name="$t('contactUs.email')" v-model="user.email" />
-        </div>
-        <div class="col-md-12 col-sm-12">
-          <scorp-input
-            type="password"
-            validate="required|min:6|max:12|numeric"
-            :name="$t('contactUs.password')"
-            v-model.trim="user.password"
-          />
+        <div
+          class="col-md-12 col-sm-12"
+          v-for="({ value, ...rest }, index) in fields"
+          :key="`logi-modal-field-${index}`"
+        >
+          <scorp-input :name="$t(`contactUs.${value}`)" v-bind="rest" v-model="user[value]" />
         </div>
       </div>
-
       <div class="d-flex justify-content-center align-items-center my-3">
-        <scorp-button @click="onClose" block size="lg" color="mid-grey" bg-color="transparent" class="mx-3">{{
-          $t('action.cancel')
-        }}</scorp-button>
-        <scorp-button type="submit" block size="lg" bg-color="regent-grey" class="mx-3">{{
-          $t('action.login')
-        }}</scorp-button>
+        <scorp-button
+          block
+          size="lg"
+          class="mx-3"
+          color="mid-grey"
+          @click="onClose"
+          bg-color="transparent"
+          v-text="$t('action.cancel')"
+        />
+        <scorp-button type="submit" block size="lg" bg-color="regent-grey" class="mx-3" v-text="$t('action.login')" />
       </div>
     </scorp-form>
   </scorp-modal>
@@ -57,6 +50,16 @@ export default {
         });
         this.onClose();
       }
+    },
+  },
+  computed: {
+    fields() {
+      return [
+        { validate: 'required', value: 'title' },
+        { validate: 'required', value: 'name' },
+        { validate: 'required|email', value: 'email' },
+        { type: 'password', validate: 'required|min:6|max:12|numeric', value: 'password' },
+      ];
     },
   },
 };

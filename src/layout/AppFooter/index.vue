@@ -1,17 +1,16 @@
 <template>
-  <footer class="app-footer">
-    <div class="row text-center">
-      <div
-        v-for="({ key, to }, index) in links"
-        :key="`header-item-${index}`"
-        @click="getItemPage({ to })"
-        class="col-md-3 col-sm-12 app-footer__item"
-      >
-        {{ $t(`general.${key}`) }}
-      </div>
+  <footer class="row text-center app-footer">
+    <div
+      v-for="({ key, to }, index) in links"
+      :key="`header-item-${index}`"
+      @click="getItemPage({ to })"
+      class="col-md-3 col-sm-12 app-footer__item"
+    >
+      {{ $t(`general.${key}`) }}
     </div>
   </footer>
 </template>
+
 <script>
 export default {
   name: 'AppFooter',

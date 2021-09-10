@@ -1,9 +1,11 @@
 {
-  "name": "scorp",
+  "name": "scorp-case-study",
+  "author": "cevikumitnazim@gmail.com",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit --unhandled-rejections=strict --quiet --watch tests/unit/index.js",
     "lint": "vue-cli-service lint"
   },
