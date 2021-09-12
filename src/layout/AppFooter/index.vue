@@ -1,5 +1,5 @@
 <template>
-  <footer class="row text-center app-footer">
+  <footer class="row text-center app-footer m-0">
     <div
       v-for="({ key, to }, index) in links"
       :key="`header-item-${index}`"
