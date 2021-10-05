@@ -6,7 +6,7 @@
 import { Form as ValidationForm } from 'vee-validate';
 
 export default {
-  name: 'ScorpForm',
+  name: 'OrganismForm',
   emits: ['on-submit'],
   components: { ValidationForm },
   methods: {

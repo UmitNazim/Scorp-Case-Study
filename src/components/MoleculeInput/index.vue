@@ -1,9 +1,9 @@
 <template>
-  <label class="scorp-label d-block mb-1 mt-2" :for="name">
-    {{ name }}<span v-if="isRequired" class="scorp-label__error">*</span></label
+  <label class="atom-label d-block mb-1 mt-2" :for="name">
+    {{ name }}<span v-if="isRequired" class="atom-label__error">*</span></label
   >
-  <validate-form-field v-bind="options" class="scorp-input" v-model="value" />
-  <validate-form-error-message :name="name" class="scorp-label__error" />
+  <validate-form-field v-bind="options" class="molecule-input" v-model="value" />
+  <validate-form-error-message :name="name" class="atom-label__error" />
 </template>
 
 <script>
@@ -12,7 +12,7 @@ import { Field, ErrorMessage } from 'vee-validate';
 import { computed } from 'vue';
 
 export default {
-  name: 'ScorpInput',
+  name: 'MoleculeInput',
   emits: ['update:modelValue'],
   mixins: [FormControlMixin],
   components: {
@@ -36,7 +36,7 @@ export default {
     options() {
       return {
         ...this.formControlOptions,
-        class: { 'scorp-input__disabled': this.disabled },
+        class: { 'molecule-input__disabled': this.disabled },
         ...(this.type && this.type === 'textarea' ? { as: this.type } : { type: this.type }),
         ...this.$attrs,
       };

@@ -1,34 +1,33 @@
 <template>
   <div class="contact-us bg-seas-hell mx-auto">
-    <h1 class="text-center mb-4">{{ $t('page.contactUs') }}</h1>
     <organism-form @on-submit="handleSubmit">
       <div class="row">
         <div
           class="col-md-12 col-sm-12"
           v-for="({ value, ...rest }, index) in fields"
-          :key="`contact-us-field-${index}`"
+          :key="`login-content-field-${index}`"
         >
-          <molecule-input :name="$t(`contactUs.${value}`)" v-bind="rest" v-model="message[value]" />
+          <molecule-input :name="$t(`contactUs.${value}`)" v-bind="rest" v-model="user[value]" />
         </div>
       </div>
-      <atom-button flat block class="my-4" type="submit">{{ $t('action.send') }}</atom-button>
+      <atom-button block type="submit" size="lg" class="mt-4" bg-color="regent-grey" v-text="$t('action.login')" />
     </organism-form>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'ContactUs',
+  name: 'LoginContent',
   data() {
     return {
-      message: {},
+      user: {},
     };
   },
   methods: {
     handleSubmit({ isValid: { valid } } = {}) {
       if (valid) {
-        this.$store.commit('contactUs/setCotactUsMessage', {
-          message: this.message,
+        this.$store.commit('auth/setUser', {
+          user: this.user,
         });
         this.$router.push('/');
       }
@@ -40,12 +39,8 @@ export default {
         { validate: 'required', value: 'title' },
         { validate: 'required', value: 'name' },
         { validate: 'required|email', value: 'email' },
-        { validate: 'required', value: 'country' },
-        { type: 'textarea', validate: 'required|min:20|max:100', value: 'message' },
+        { type: 'password', validate: 'required|min:6|max:12|numeric', value: 'password' },
       ];
-    },
-    userInfo() {
-      return this.$store.getters['auth/getUser'];
     },
   },
 };

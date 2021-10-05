@@ -4,15 +4,15 @@
     <transition name="fade-in-down-out" mode="in-out">
       <div
         v-if="isVisible"
-        class="scorp-modal__overlay d-flex justify-content-center align-items-center"
+        class="organism-modal__overlay d-flex justify-content-center align-items-center"
         @click.self="closeOnOutSideClick && $emit('on-close')"
       >
-        <div v-bind="containerOptions" class="scorp-modal__content  p-3 d-flex flex-column">
+        <div v-bind="containerOptions" class="organism-modal__content  p-3 d-flex flex-column">
           <header @click="$emit('on-close')">
             <img src="@/assets/icons/close.svg" class="cursor-pointer text-mid-grey float-end" />
           </header>
 
-          <article class="scorp-modal__main mt-1">
+          <article class="organism-modal__main mt-1">
             <slot></slot>
           </article>
 
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: 'ScorpModal',
+  name: 'OrganismModal',
   emits: ['on-close'],
   props: {
     size: {
@@ -57,8 +57,8 @@ export default {
     containerOptions() {
       return {
         class: {
-          'scorp-modal__fullscreen-on-mobile': this.fullScreenOnMobile,
-          [`scorp-modal__${this.size}`]: this.size,
+          'organism-modal__fullscreen-on-mobile': this.fullScreenOnMobile,
+          [`organism-modal__${this.size}`]: this.size,
           'rounded-0': this.flat || this.fullScreenOnMobile,
           ...this.$attrs,
         },

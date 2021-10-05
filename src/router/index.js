@@ -21,6 +21,16 @@ const routes = [
       permissions: null,
     },
   },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import('@/views/Auth/LoginContent'),
+    meta: {
+      pageTitle: 'page.login',
+      requiresLogin: false,
+      permissions: null,
+    },
+  },
 ];
 
 const router = createRouter({

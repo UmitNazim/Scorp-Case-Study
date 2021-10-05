@@ -1,7 +1,7 @@
 <template>
   <button
     v-bind="options"
-    class="scorp-button p-2 d-flex align-items-center justify-content-center"
+    class="atom-button p-2 d-flex align-items-center justify-content-center"
     @click="$emit('click', $event)"
   >
     <slot></slot>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'ScorpButton',
+  name: 'AtomButton',
   emits: ['click'],
   props: {
     type: {
@@ -50,9 +50,9 @@ export default {
         class: {
           [`text-${this.color}`]: this.color,
           [`bg-${this.bgColor}`]: this.bgColor,
-          [`scorp-button__${this.size}`]: this.size,
+          [`atom-button__${this.size}`]: this.size,
           'w-100': this.block,
-          'scorp-button__disabled': this.disabled,
+          'atom-button__disabled': this.disabled,
           'rounded-0': this.flat,
         },
         disabled: this.disabled,

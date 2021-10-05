@@ -14,9 +14,9 @@
       width: userInfo ? '12%' : '20%',
     }"
   >
-    <scorp-button
+    <atom-button
       v-if="!userInfo"
-      @click="isModalOpen = true"
+      @click="$router.push('/login')"
       block
       size="lg"
       bg-color="white"
@@ -43,21 +43,17 @@
       {{ userInfo.name }}
     </span>
     <hr />
-    <scorp-button @click="getLogingOut" block size="lg" bg-color="regent-grey" v-text="$t('action.logOut')" />
+    <atom-button @click="getLogingOut" block size="lg" bg-color="regent-grey" v-text="$t('action.logOut')" />
   </div>
-  <login-modal v-if="isModalOpen" @on-close="isModalOpen = false" />
 </template>
 
 <script>
-import LoginModal from '../_shared/LoginModal';
 import { setLocale } from '@vee-validate/i18n';
 
 export default {
   name: 'AppDesktopNavbar',
-  components: { LoginModal },
   data() {
     return {
-      isModalOpen: false,
       isOptionsPanelOpen: false,
     };
   },
